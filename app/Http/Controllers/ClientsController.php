@@ -9,7 +9,15 @@ class ClientsController extends Controller
 {
     public function index()
     {
-        $clients = auth()->user()->clients()->orderBy('id', 'desc')->paginate(10);
+        $clients = auth()
+            ->user()
+            ->clients()
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+
+        if (request()->wantsJson()) {
+            return response()->json($clients, 200);
+        }
 
         return view('clients', compact('clients'));
     }
