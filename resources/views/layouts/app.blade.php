@@ -37,7 +37,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         @auth
+                            <li><a href="{{ route('home') }}">Home</a></li>
                             <li><a href="{{ route('clients') }}">Clients</a></li>
+                            <li><a href="{{ url('/horizon') }}">Horizon</a></li>
                         @endauth
                     </ul>
 
