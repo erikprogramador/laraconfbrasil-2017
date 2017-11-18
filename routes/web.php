@@ -26,3 +26,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('clients/{client}', 'ClientsController@update')->name('clients.update');
     Route::delete('clients/{client}', 'ClientsController@destroy')->name('clients.destroy');
 });
+
+Route::get('queue', function () {
+    \App\Jobs\Nice::dispatch();
+
+    return 'Done';
+});
+
+Route::get('queue-bad', function () {
+    \App\Jobs\Sleeper::dispatch();
+
+    return 'Done';
+});
