@@ -79,17 +79,36 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    LaraconfBrasil
                 </div>
 
-                <div class="links">
+                <div class="online links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://envoyer.io/">Envoyer</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+                <div class="offline links">
+                    <a href="{{ asset('images/docs.png') }}" target="_blank">Documentation</a>
+                    <a href="{{ asset('images/laracasts.png') }}" target="_blank">Laracasts</a>
+                    <a href="{{ asset('images/laravel-news.png') }}" target="_blank">News</a>
+                    <a href="{{ asset('images/forge.png') }}" target="_blank">Forge</a>
+                    <a href="{{ asset('images/envoyer.png') }}" target="_blank">Envoyer</a>
+                    <a href="{{ asset('images/github.png') }}" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
+
+        <script>
+            if (! navigator.onLine) {
+                document.querySelector('.online').style.display = 'none';
+                document.querySelector('.offline').style.display = 'inline-block';
+            }
+            if (navigator.onLine) {
+                document.querySelector('.offline').style.display = 'none';
+            }
+        </script>
     </body>
 </html>
