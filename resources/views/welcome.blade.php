@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    LaraconfBrasil
+                    Laravel e seu ecossistema
                 </div>
 
                 <div class="online links">
