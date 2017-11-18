@@ -33,5 +33,12 @@ Vue.component(
 );
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+
+    mounted () {
+        window.axios.get('/api/clients')
+            .then(response => {
+                console.log(response.data);
+            });
+    }
 });
