@@ -5,6 +5,9 @@
         <div class="row">
             <div class="col-md-8 col-sm-12 col-md-offset-2">
                 <form method="POST" action="{{ route('clients.store') }}" class="panel panel-default">
+                    <div class="panel-heading">
+                        Create Client
+                    </div>
                     <div class="panel-body">
                         {{ csrf_field() }}
                         @include('form')
